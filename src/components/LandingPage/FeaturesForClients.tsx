@@ -76,7 +76,7 @@ const ThirdSection = () => {
         </Grid>
       </Grid>
 
-      <Grid container sx={{ mt: 3 }}>
+      <Grid container sx={{ mt: 3 }} spacing={2}>
         <Grid md={4} sm={6}>
           <BasicCard
             black="true"
