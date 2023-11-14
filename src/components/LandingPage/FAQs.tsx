@@ -1,17 +1,9 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MyAccordion from "./Accordion";
 import MyForm from "./FAQsForm";
-
-const useStyles = makeStyles(() => ({
-  image: {
-    width: "100%",
-    height: "100%",
-  },
-}));
 
 const accordionData = [
   {
@@ -31,7 +23,6 @@ const accordionData = [
   },
 ];
 const SeventhSection = () => {
-  const classes = useStyles();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const h1FontSize = isSmallScreen ? "1.5rem" : "1.7rem";

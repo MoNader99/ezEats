@@ -18,8 +18,13 @@ const Footer = () => {
         <div style={{ textAlign: "center" }}>
           Copyright © 2023 - Ez Eats
           <br />
-          <a href="/terms">Terms & Conditions</a> /{" "}
-          <a href="/privacy">Privacy Policy</a>
+          <a style={{ color: "white" }} href="#">
+            Terms & Conditions
+          </a>{" "}
+          /{" "}
+          <a style={{ color: "white" }} href="#">
+            Privacy Policy
+          </a>
         </div>
       </Container>
     </footer>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Button } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -17,7 +17,6 @@ const ForthSection = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const h1FontSize = isSmallScreen ? "1.8rem" : "2.2rem";
-  const pFontSize = isSmallScreen ? "16px" : "16px";
   return (
     <Grid container sx={{ mt: 15 }}>
       <Grid item sm={12} sx={{ textAlign: "center", mb: 5 }}>

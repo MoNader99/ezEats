@@ -6,10 +6,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import BasicCard from "./BasicCard";
 
 const useStyles = makeStyles(() => ({
-  image: {
-    width: "100%",
-    height: "100%",
-  },
+  image: {},
 }));
 
 const SecondSection = () => {
@@ -58,22 +55,48 @@ const SecondSection = () => {
           }}
           lg={4}
         >
-          <BasicCard
-            Header="Reduce Waiters Cost"
-            Body="Contactless ordering reduces the tasks a waiter has to do, which will lead to a significant decrease in Labor Cost."
-          />
-          <BasicCard
-            Header="Increase Average Bill"
-            Body="Your digital menu showcases beautiful imagery, encouraging your customers to order more and make better choices."
-          />
-          <BasicCard
-            Header="Increase Table Turnover"
-            Body="Customers can order and pay instantly, you'll see your table turnover increasing during your peak times."
-          />
+          <Grid
+            container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-evenly",
+            }}
+            spacing={5}
+          >
+            <Grid item>
+              <BasicCard
+                Header="Reduce Waiters Cost"
+                Body="Contactless ordering reduces the tasks a waiter has to do, which will lead to a significant decrease in Labor Cost."
+              />
+            </Grid>
+            <Grid item>
+              <BasicCard
+                Header="Increase Average Bill"
+                Body="Your digital menu showcases beautiful imagery, encouraging your customers to order more and make better choices."
+              />
+            </Grid>
+            <Grid item>
+              <BasicCard
+                Header="Increase Table Turnover"
+                Body="Customers can order and pay instantly, you'll see your table turnover increasing during your peak times."
+              />
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item lg={4}>
+        <Grid
+          item
+          sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+          lg={4}
+        >
           <img
             className={classes.image}
+            style={{
+              width: useMediaQuery(theme.breakpoints.down("md"))
+                ? "50%"
+                : "100",
+              height: "100%",
+            }}
             decoding="async"
             src="https://ez-eats.com/wp-content/uploads/2023/09/features-img-e1694510500983.png"
             alt=""
@@ -88,18 +111,34 @@ const SecondSection = () => {
           }}
           lg={4}
         >
-          <BasicCard
-            Header="Customers Feedback"
-            Body="By asking your clients for feedback, you can measure their satisfaction, and improve Customer Retention."
-          />
-          <BasicCard
-            Header="Focus on Upselling & CX"
-            Body="By reducing the tasks waiters have to do, they now have more time to focus on upselling and customer experience."
-          />
-          <BasicCard
-            Header="Increase Tips"
-            Body="Your clients won't wait to order, call waiters, or pay bills. This enhances their dining experience, which will lead to leave more tips"
-          />
+          <Grid
+            container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-evenly",
+            }}
+            spacing={4}
+          >
+            <Grid item>
+              <BasicCard
+                Header="Customers Feedback"
+                Body="By asking your clients for feedback, you can measure their satisfaction, and improve Customer Retention."
+              />
+            </Grid>
+            <Grid item>
+              <BasicCard
+                Header="Focus on Upselling & CX"
+                Body="By reducing the tasks waiters have to do, they now have more time to focus on upselling and customer experience."
+              />
+            </Grid>
+            <Grid item>
+              <BasicCard
+                Header="Increase Tips"
+                Body="Your clients won't wait to order, call waiters, or pay bills. This enhances their dining experience, which will lead to leave more tips"
+              />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
       <Grid

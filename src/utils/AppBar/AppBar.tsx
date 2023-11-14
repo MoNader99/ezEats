@@ -1,37 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/styles';
-import { AppBar, Toolbar, Container, Button, Menu, MenuItem, IconButton, useMediaQuery } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@mui/styles";
+import {
+  AppBar,
+  Toolbar,
+  Container,
+  Button,
+  Menu,
+  MenuItem,
+  IconButton,
+  useMediaQuery,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const useStyles = makeStyles(() => ({
-    root: {
-        flexGrow: 1,
-    },
-    toolbar: {
-        display: "flex !important",
-        justifyContent: "space-between !important",
-        minHeight:"100px !important"
-    },
-    logo: {
-        maxWidth: "10% !important",
-    },
-    appBarTransparent: {
-        backgroundColor: 'rgba(255, 255, 255, 0) !important',
-        transition: 'background-color 0.3s ease-in-out !important',
-    },
-    appBarSolid: {
-        backgroundColor: 'rgba(255, 255, 255) !important',
-        color: 'black !important',
-        transition: 'background-color 0.3s ease-in-out !important',
-    },
-    barLink:{
-        fontFamily: 'Montserrat, sans-serif !important',
-        fontWeight: "600 !important",
-        fontSize:"16px !important"
-    },
-    solidColor: {
-        color: '#5a5a5a !important',
-    },
+  root: {
+    flexGrow: 1,
+  },
+  toolbar: {
+    display: "flex !important",
+    justifyContent: "space-between !important",
+    minHeight: "100px !important",
+  },
+  logo: {
+    maxWidth: "10% !important",
+  },
+  appBarTransparent: {
+    backgroundColor: "rgba(255, 255, 255, 0) !important",
+    transition: "background-color 0.3s ease-in-out !important",
+  },
+  appBarSolid: {
+    backgroundColor: "rgba(255, 255, 255) !important",
+    color: "black !important",
+    transition: "background-color 0.3s ease-in-out !important",
+  },
+  barLink: {
+    fontFamily: "Montserrat, sans-serif !important",
+    fontWeight: "600 !important",
+    fontSize: "16px !important",
+  },
+  solidColor: {
+    color: "#5a5a5a !important",
+  },
 }));
 
 export default function MyAppBar() {
@@ -47,7 +56,7 @@ export default function MyAppBar() {
     setLanguageAnchorEl(null);
   };
 
-  const isScreenSizeSmall = useMediaQuery('(max-width: 1000px)');
+  const isScreenSizeSmall = useMediaQuery("(max-width: 1000px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,19 +67,27 @@ export default function MyAppBar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <div className={classes.root}>
-      <AppBar elevation={0} position="fixed" className={isSolid ? classes.appBarSolid : classes.appBarTransparent}>
+      <AppBar
+        elevation={0}
+        position="fixed"
+        className={isSolid ? classes.appBarSolid : classes.appBarTransparent}
+      >
         <Container sx={{ maxWidth: "1300px !important" }}>
           <Toolbar className={classes.toolbar}>
-            <img src={process.env.PUBLIC_URL + '/Images/Ez-Eats.png'} alt="Logo" className={classes.logo} />
+            <img
+              src={process.env.PUBLIC_URL + "/Images/Ez-Eats.png"}
+              alt="Logo"
+              className={classes.logo}
+            />
             {isScreenSizeSmall ? (
               <>
                 <IconButton
@@ -99,15 +116,47 @@ export default function MyAppBar() {
               </>
             ) : (
               <div>
-                <Button color="inherit" className={`${classes.barLink} ${isSolid ? classes.solidColor : ''}`}>Home</Button>
-                <Button color="inherit" className={`${classes.barLink} ${isSolid ? classes.solidColor : ''}`}>Features</Button>
-                <Button color="inherit" className={`${classes.barLink} ${isSolid ? classes.solidColor : ''}`}>Careers</Button>
-                <Button color="inherit" className={`${classes.barLink} ${isSolid ? classes.solidColor : ''}`}>FAQs</Button>
-                <Button color="inherit" className={`${classes.barLink} ${isSolid ? classes.solidColor : ''}`}>Contact</Button>
                 <Button
                   color="inherit"
-                  onClick={handleLanguageClick}
+                  className={`${classes.barLink} ${
+                    isSolid ? classes.solidColor : ""
+                  }`}
                 >
+                  Home
+                </Button>
+                <Button
+                  color="inherit"
+                  className={`${classes.barLink} ${
+                    isSolid ? classes.solidColor : ""
+                  }`}
+                >
+                  Features
+                </Button>
+                <Button
+                  color="inherit"
+                  className={`${classes.barLink} ${
+                    isSolid ? classes.solidColor : ""
+                  }`}
+                >
+                  Careers
+                </Button>
+                <Button
+                  color="inherit"
+                  className={`${classes.barLink} ${
+                    isSolid ? classes.solidColor : ""
+                  }`}
+                >
+                  FAQs
+                </Button>
+                <Button
+                  color="inherit"
+                  className={`${classes.barLink} ${
+                    isSolid ? classes.solidColor : ""
+                  }`}
+                >
+                  Contact
+                </Button>
+                <Button color="inherit" onClick={handleLanguageClick}>
                   Language
                 </Button>
                 <Menu
